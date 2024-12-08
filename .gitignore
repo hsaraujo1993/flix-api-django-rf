@@ -1,0 +1,68 @@
+# Python
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+*.so
+*.dylib
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+lib/
+lib64/
+platform/
+sdist/
+var/
+
+# Django
+*.log
+*.pot
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+*.db-journal
+*.bak
+*.swp
+*.swo
+
+# Virtualenv
+venv/
+ENV/
+env/
+.venv/
+venv.bak/
+
+# PyCharm
+.idea/
+
+# VS Code
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Docker
+*.log
+docker-compose.override.yml
+
+# Coverage reports
+.coverage
+.coverage.*
+nosetests.xml
+*.cover
+*.hypothesis/
+
+# SQLite
+*.sqlite3
+
+# Celery / Redis
+celerybeat-schedule
+*.pid
+*.log
+*.sock
