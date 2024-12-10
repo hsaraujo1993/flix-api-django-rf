@@ -17,8 +17,10 @@ ENV/
 # Banco de dados local (se usar SQLite, por exemplo)
 db.sqlite3
 
-# Arquivos de migrações gerados
-*/migrations/*.py
+# Ignorar todos os arquivos dentro de pastas migrations
+*/migrations/*
+
+# Exceto o arquivo __init__.py
 !*/migrations/__init__.py
 
 # Arquivos estáticos coletados

@@ -21,7 +21,7 @@ from django.urls import path
 from genres.views import GenreListCreateAPIView, GenreRetrieveUpdateDestroyAPIView
 from actors.views import ActorListCreateAPIView, ActorRetrieveUpdateDestroyAPIView
 from movies.views import MovieListCreateAPIView, MovieRetrieveUpdateDestroyAPIView
-
+from reviews.views import ReviewListCreateAPIView, ReviewRetrieveUpdateDestroyAPIView
 
 
 urlpatterns = [
@@ -35,4 +35,7 @@ urlpatterns = [
 
     path('movies/', MovieListCreateAPIView.as_view(), name='movie-list-create'),
     path('movies/<int:pk>/', MovieRetrieveUpdateDestroyAPIView.as_view(), name='movie-retrieve-update-destroy'),
+
+    path('reviews/', ReviewListCreateAPIView.as_view(), name='review-list-create'),
+    path('reviews/<int:pk>/', ReviewRetrieveUpdateDestroyAPIView.as_view(), name='review-retrieve-update-destroy'),
 ]
