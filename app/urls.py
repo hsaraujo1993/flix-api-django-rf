@@ -20,6 +20,7 @@ from django.contrib import admin
 from django.urls import path
 from genres.views import GenreListCreateAPIView, GenreRetrieveUpdateDestroyAPIView
 from actors.views import ActorListCreateAPIView, ActorRetrieveUpdateDestroyAPIView
+from movies.views import MovieListCreateAPIView, MovieRetrieveUpdateDestroyAPIView
 
 
 
@@ -31,4 +32,7 @@ urlpatterns = [
 
     path('actors/', ActorListCreateAPIView.as_view(), name='actor-list-create'),
     path('actors/<int:pk>/', ActorRetrieveUpdateDestroyAPIView.as_view(), name='actor-retrieve-update-destroy'),
+
+    path('movies/', MovieListCreateAPIView.as_view(), name='movie-list-create'),
+    path('movies/<int:pk>/', MovieRetrieveUpdateDestroyAPIView.as_view(), name='movie-retrieve-update-destroy'),
 ]

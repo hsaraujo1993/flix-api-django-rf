@@ -1,68 +1,55 @@
-# Python
+# Arquivos compilados e caches
 *.pyc
 *.pyo
 *.pyd
 __pycache__/
-*.so
-*.dylib
-*.egg
-*.egg-info/
-dist/
-build/
-eggs/
-lib/
-lib64/
-platform/
-sdist/
-var/
-
-# Django
 *.log
 *.pot
-*.pyc
-*.pyo
-*.db
 *.sqlite3
-*.db-journal
-*.bak
+*.env
+
+# Configurações do ambiente virtual
+env/
+venv/
+ENV/
+.VENV/
+
+# Banco de dados local (se usar SQLite, por exemplo)
+db.sqlite3
+
+# Arquivos de migrações gerados
+*/migrations/*.py
+!*/migrations/__init__.py
+
+# Arquivos estáticos coletados
+staticfiles/
+static/
+
+# Arquivos de mídia carregados por usuários
+media/
+
+# Arquivos de configurações locais de IDEs
+.idea/
+.vscode/
 *.swp
 *.swo
 
-# Virtualenv
-venv/
-ENV/
-env/
-.venv/
-venv.bak/
+# Arquivos de ferramentas de dependências
+Pipfile.lock
+poetry.lock
 
-# PyCharm
-.idea/
-
-# VS Code
-.vscode/
-
-# MacOS
-.DS_Store
-
-# Jupyter Notebook
-.ipynb_checkpoints/
-
-# Docker
-*.log
+# Arquivos gerados pelo Docker
+*.pid
 docker-compose.override.yml
 
-# Coverage reports
+# Arquivos gerados pelo Coverage.py
 .coverage
-.coverage.*
-nosetests.xml
+htmlcov/
+
+# Arquivos gerados por testes
+*.test.db
 *.cover
-*.hypothesis/
 
-# SQLite
-*.sqlite3
-
-# Celery / Redis
-celerybeat-schedule
-*.pid
-*.log
-*.sock
+# Arquivos do mypy
+.mypy_cache/
+.dmypy.json
