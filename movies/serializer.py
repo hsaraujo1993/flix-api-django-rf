@@ -1,9 +1,8 @@
 from rest_framework import serializers
-
 from movies.models import Movie
 
 
-class MovieSerializer(serializers.ModelSerializer):
+class MovieModelSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Movie

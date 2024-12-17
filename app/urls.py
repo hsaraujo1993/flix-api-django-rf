@@ -15,27 +15,18 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from tkinter.font import names
-
 from django.contrib import admin
-from django.urls import path
-from genres.views import GenreListCreateAPIView, GenreRetrieveUpdateDestroyAPIView
-from actors.views import ActorListCreateAPIView, ActorRetrieveUpdateDestroyAPIView
-from movies.views import MovieListCreateAPIView, MovieRetrieveUpdateDestroyAPIView
-from reviews.views import ReviewListCreateAPIView, ReviewRetrieveUpdateDestroyAPIView
+from django.urls import path, include
 
 
 urlpatterns = [
-
     path('admin/', admin.site.urls),
-    path('genres/', GenreListCreateAPIView.as_view(), name='genre-create-list'),
-    path('genres/<int:pk>/', GenreRetrieveUpdateDestroyAPIView.as_view(), name='genre-retrieve-update-destroy'),
 
-    path('actors/', ActorListCreateAPIView.as_view(), name='actor-list-create'),
-    path('actors/<int:pk>/', ActorRetrieveUpdateDestroyAPIView.as_view(), name='actor-retrieve-update-destroy'),
+    path('api/v1/', include('genres.urls')),
 
-    path('movies/', MovieListCreateAPIView.as_view(), name='movie-list-create'),
-    path('movies/<int:pk>/', MovieRetrieveUpdateDestroyAPIView.as_view(), name='movie-retrieve-update-destroy'),
+    path('api/v1/', include('actors.urls')),
 
-    path('reviews/', ReviewListCreateAPIView.as_view(), name='review-list-create'),
-    path('reviews/<int:pk>/', ReviewRetrieveUpdateDestroyAPIView.as_view(), name='review-retrieve-update-destroy'),
+    path('api/v1/', include('movies.urls')),
+
+    path('api/v1/', include('reviews.urls')),
 ]

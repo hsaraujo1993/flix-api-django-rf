@@ -1,9 +1,9 @@
-from django.shortcuts import render
+from django.core.serializers import serialize
 from rest_framework.response import Response
-
-from movies.serializer import MovieSerializer
+from rest_framework import serializers
 from movies.models import Movie
 from rest_framework import generics, status
+from movies.serializer import MovieModelSerializer
 
 
 # Create your views here.
@@ -12,13 +12,13 @@ from rest_framework import generics, status
 class MovieListCreateAPIView(generics.ListCreateAPIView):
 
     queryset = Movie.objects.all()
-    serializer_class = MovieSerializer
+    serializer_class = MovieModelSerializer
 
 
 class MovieRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
 
     queryset = Movie.objects.all()
-    serializer_class = MovieSerializer
+    serializer_class = MovieModelSerializer
 
     def delete(self, request, *args, **kwargs):
         instance = self.get_object()
