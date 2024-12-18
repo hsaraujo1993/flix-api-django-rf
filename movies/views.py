@@ -1,4 +1,5 @@
 from django.core.serializers import serialize
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework import serializers
 from movies.models import Movie
@@ -10,13 +11,13 @@ from movies.serializer import MovieModelSerializer
 
 
 class MovieListCreateAPIView(generics.ListCreateAPIView):
-
+    permission_classes = (IsAuthenticated,)
     queryset = Movie.objects.all()
     serializer_class = MovieModelSerializer
 
 
 class MovieRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
-
+    permission_classes = (IsAuthenticated,)
     queryset = Movie.objects.all()
     serializer_class = MovieModelSerializer
 

@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics, status
 from rest_framework.response import Response
-
+from rest_framework.permissions import IsAuthenticated
 from actors.models import Actor
 from actors.serializer import ActorSerializer
 
@@ -9,11 +9,13 @@ from actors.serializer import ActorSerializer
 # Create your views here.
 
 class ActorListCreateAPIView(generics.ListCreateAPIView):
+    permission_classes = (IsAuthenticated,)
     queryset = Actor.objects.all()
     serializer_class = ActorSerializer
 
 
 class ActorRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
+    permission_classes = (IsAuthenticated,)
     queryset = Actor.objects.all()
     serializer_class = ActorSerializer
 
