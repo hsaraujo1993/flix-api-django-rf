@@ -138,6 +138,7 @@ REST_FRAMEWORK = {
     )
 }
 
+# Configuração padrão tempo de vida do token
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=10),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=5),

@@ -4,19 +4,19 @@ from rest_framework.response import Response
 from reviews.models import Review
 from reviews.serializer import ReviewSerializer
 from rest_framework import generics, status
-
+from app.permission import AppPermissionGlobal
 
 # Create your views here.
 
 
 class ReviewListCreateAPIView(generics.ListCreateAPIView):
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, AppPermissionGlobal)
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
 
 
 class ReviewRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, AppPermissionGlobal)
     queryset = Review.objects.all()
     serializer_class = ReviewSerializer
 

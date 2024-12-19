@@ -5,19 +5,20 @@ from rest_framework import serializers
 from movies.models import Movie
 from rest_framework import generics, status
 from movies.serializer import MovieModelSerializer
+from app.permission import AppPermissionGlobal
 
 
 # Create your views here.
 
 
 class MovieListCreateAPIView(generics.ListCreateAPIView):
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, AppPermissionGlobal)
     queryset = Movie.objects.all()
     serializer_class = MovieModelSerializer
 
 
 class MovieRetrieveUpdateDestroyAPIView(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (IsAuthenticated, AppPermissionGlobal)
     queryset = Movie.objects.all()
     serializer_class = MovieModelSerializer
 
